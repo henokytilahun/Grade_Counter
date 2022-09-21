@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 int main()
 {
@@ -45,9 +47,34 @@ int main()
 
   //write money made into .txt file
 
+  std::ofstream outfile;
+
+  outfile.open("Sam.txt");
+
+  if (outfile.is_open())
+  {
+    outfile << "Sam's Money is " << s_money;
+
+    outfile.close();
+  } else
+  {
+    std::cout << "Error!\n";
+  }
 
 
-  //transfer .txt file to MySQL
+  //Lydia's file  
+  std::ofstream outfile2;
 
+  outfile2.open("Lydia.txt");
+
+  if (outfile2.is_open())
+  {
+    outfile2 << "Lydia's Money is " << l_money;
+
+    outfile2.close();
+  } else
+  {
+    std::cout << "Error!\n";
+  }
   return 0;
 }
